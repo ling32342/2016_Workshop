@@ -225,25 +225,33 @@ div.tocify {
 </div>
 
 
+<pre><code>Contact me:
+  mail to ling32342@gmail.com</code></pre>
+<hr />
 <div id="chapter-1---" class="section level1">
 <h1>Chapter 1 - 基本運算</h1>
 <div id="r-" class="section level2">
 <h2>1.1 R 的基本資料屬性</h2>
 <ul>
-<li>R 的基本資料屬性可分為
+<li><h3 id="r-">R 的基本資料屬性可分為</h3>
 <ol style="list-style-type: decimal">
-<li>Character</li>
-<li>Numeric</li>
-<li>Integer</li>
-<li>Logical</li>
-<li>Factor</li>
+<li><h4 id="character">Character</h4>
+<h5 id="ex-00">ex: “我是00”</h5></li>
+<li><h4 id="numeric">Numeric</h4>
+<h5 id="ex-1.1-2.889-.">ex: 1.1, 2.889, ….</h5></li>
+<li><h4 id="integer">Integer</h4>
+<h5 id="ex-1-2-3">ex: 1, 2, 3,…</h5></li>
+<li><h4 id="logical">Logical</h4>
+<h5 id="ex-true-or-false">ex: TRUE or FALSE</h5></li>
+<li><h4 id="factor">Factor</h4>
+<h5 id="ex">ex:</h5></li>
 </ol></li>
 </ul>
 </div>
 <div class="section level2">
 <h2>1.2 常見基本運算</h2>
 <ul>
-<li>加減乘除</li>
+<li><h3>加減乘除</h3></li>
 </ul>
 <pre class="r"><code>1 + 3   # 加</code></pre>
 <pre><code>## [1] 4</code></pre>
@@ -254,7 +262,7 @@ div.tocify {
 <pre class="r"><code>6 / 3   # 除</code></pre>
 <pre><code>## [1] 2</code></pre>
 <ul>
-<li>次方、立方、平方根</li>
+<li><h3>次方、立方、平方根</h3></li>
 </ul>
 <pre class="r"><code>3 ^ 2       # 3的平方</code></pre>
 <pre><code>## [1] 9</code></pre>
@@ -267,20 +275,35 @@ div.tocify {
 <pre class="r"><code>4 ^ (1/2)   # 4的平方根</code></pre>
 <pre><code>## [1] 2</code></pre>
 <ul>
-<li>log</li>
+<li><h3 id="exponential">exponential</h3></li>
 </ul>
-<pre class="r"><code>log(10)</code></pre>
+<pre class="r"><code>exp(10)     # e = 2.71828... ; 指e ^10</code></pre>
+<pre><code>## [1] 22026.47</code></pre>
+<ul>
+<li><h3 id="log">log</h3></li>
+</ul>
+<pre class="r"><code>log(10)     # 以e為底取log</code></pre>
 <pre><code>## [1] 2.302585</code></pre>
-<pre class="r"><code>log(10,2)</code></pre>
+<pre class="r"><code>log(10,2)   # 以2為底取log ; log(x,base) </code></pre>
 <pre><code>## [1] 3.321928</code></pre>
-<pre class="r"><code>log2(10)</code></pre>
+<pre class="r"><code>log2(10)    # log2代表以2為底</code></pre>
 <pre><code>## [1] 3.321928</code></pre>
-<pre class="r"><code>log10(10)</code></pre>
+<pre class="r"><code>log10(10)   # log10代表以10為底</code></pre>
 <pre><code>## [1] 1</code></pre>
 <ul>
-<li><p>exp</p></li>
-<li><p>小數點取捨</p></li>
+<li><h3>小數位數取捨</h3></li>
 </ul>
+<pre class="r"><code>round(4.7)        # 四捨五入</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>round(4.786, 2)   # 四捨五入到小數點第二位</code></pre>
+<pre><code>## [1] 4.79</code></pre>
+<pre class="r"><code>floor(4.7)        # 無條件捨去</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>ceiling(4.7)      # 無條件進位</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>abs(-4.7)         # 取絕對值</code></pre>
+<pre><code>## [1] 4.7</code></pre>
+<hr />
 </div>
 </div>
 <div id="chapter-2--" class="section level1">
