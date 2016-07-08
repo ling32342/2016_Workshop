@@ -220,7 +220,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R Workshop_Tutorial</h1>
 <h4 class="author"><em>Hsiao Ling, Hsu</em></h4>
-<h4 class="date"><em>2016/07/23</em></h4>
+<h4 class="date"><em>2016.07.23 <span class="citation">@NCCU</span></em></h4>
 
 </div>
 
@@ -228,9 +228,38 @@ div.tocify {
 <pre><code>Contact me:
   mail to ling32342@gmail.com</code></pre>
 <hr />
-<div id="chapter-1---" class="section level1">
+<div id="outline" class="section level1">
+<h1>Outline</h1>
+<ul>
+<li><h3 id="chapter-1---">Chapter 1 - 基本運算</h3>
+<ul>
+<li><h4 id="r-">1.1 R 的基本資料屬性</h4></li>
+<li><h4>1.2 常見基本運算</h4></li>
+</ul></li>
+<li><h3 id="chapter-2---">Chapter 2 - 變數與物件</h3>
+<ul>
+<li><h4 id="vector">2.1 Vector</h4></li>
+<li><h4 id="object">2.2 Object</h4></li>
+<li><h4 id="factor">2.3 Factor</h4></li>
+<li><h4 id="list">2.4 List</h4></li>
+</ul></li>
+<li><h3 id="chapter-3---data-frame">Chapter 3 - Data Frame</h3>
+<ul>
+<li><h4 id="section">3.1</h4></li>
+<li><h4 id="section-1">3.2</h4></li>
+</ul></li>
+<li><h3 id="chapter-4---">Chapter 4 - 流程控制</h3>
+<ul>
+<li><h4>4.1 邏輯判斷</h4></li>
+<li><h4 id="if-else">4.2 if else</h4></li>
+<li><h4>4.3 迴圈結構</h4></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="chapter-1----1" class="section level1">
 <h1>Chapter 1 - 基本運算</h1>
-<div id="r-" class="section level2">
+<div id="r--1" class="section level2">
 <h2>1.1 R 的基本資料屬性</h2>
 <ul>
 <li><h3 id="r-">R 的基本資料屬性可分為</h3>
@@ -243,12 +272,12 @@ div.tocify {
 <h5 id="ex-1-2-3">ex: 1, 2, 3,…</h5></li>
 <li><h4 id="logical">Logical</h4>
 <h5 id="ex-true-or-false">ex: TRUE or FALSE</h5></li>
-<li><h4 id="factor">Factor</h4>
+<li><h4 id="factor-1">Factor</h4>
 <h5 id="ex">ex:</h5></li>
 </ol></li>
 </ul>
 </div>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>1.2 常見基本運算</h2>
 <ul>
 <li><h3>加減乘除</h3></li>
@@ -303,11 +332,190 @@ div.tocify {
 <pre><code>## [1] 5</code></pre>
 <pre class="r"><code>abs(-4.7)         # 取絕對值</code></pre>
 <pre><code>## [1] 4.7</code></pre>
+</div>
+<div class="section level2">
+<h2>1.3 常用語法</h2>
+<ul>
+<li><h3>基本統計量</h3></li>
+</ul>
+<pre class="r"><code>x &lt;- c( 1 , 2 , 3 , 4 )    # 也可以寫成 x &lt;- 1:4</code></pre>
+<pre class="r"><code>sum(x)        # 所有值加總總和</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>mean(x)       # 平均數</code></pre>
+<pre><code>## [1] 2.5</code></pre>
+<pre class="r"><code>var(x)        # 變異數</code></pre>
+<pre><code>## [1] 1.666667</code></pre>
+<pre class="r"><code>sd(x)         # 樣本標準差</code></pre>
+<pre><code>## [1] 1.290994</code></pre>
+<pre class="r"><code>cumsum(x)     # 累加</code></pre>
+<pre><code>## [1]  1  3  6 10</code></pre>
 <hr />
 </div>
 </div>
-<div id="chapter-2--" class="section level1">
-<h1>Chapter 2 -</h1>
+<div id="chapter-2---vectors" class="section level1">
+<h1>Chapter 2 - Vectors</h1>
+<ul>
+<li><h4 id="-r-">在 R 中，每一樣<strong>東西</strong>，都叫做<strong>物件</strong></h4></li>
+<li><h4 id="r-vectors">R 物件最基本的單位是向量(Vectors)</h4></li>
+<li><h4 id="c">以c()呈現向量，向量中的元素以逗號分隔</h4></li>
+<li><h4 id="eg.-c1-2-3-1-2-3">eg. c(1, 2, 3) 為一包含元素1, 2, 3的向量</h4></li>
+</ul>
+<pre class="r"><code>c( 1 , 2 , 3 )</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="section level2">
+<h2>2.1 變數的種類</h2>
+<ul>
+<li><h3>變數的種類可分為</h3></li>
+</ul>
+<div id="integer-1" class="section level4">
+<h4>1. Integer</h4>
+<div id="ex-1-2-3-1" class="section level5">
+<h5>            ex : 1, 2, 3</h5>
+</div>
+</div>
+<div id="numeric-1" class="section level4">
+<h4>2. Numeric</h4>
+<pre class="r"><code>class(c( 1.1 , 1.2 , 1.3 ))</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</div>
+<div id="character-1" class="section level4">
+<h4>3. Character</h4>
+<pre class="r"><code>class(&quot;我是00&quot;)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="logical-1" class="section level4">
+<h4>4. Logical</h4>
+<pre class="r"><code>class( TRUE )</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+</div>
+<div id="factor-2" class="section level4">
+<h4>5. Factor</h4>
+</div>
+</div>
+<div class="section level2">
+<h2>2.2 變數的賦值</h2>
+</div>
+<div class="section level2">
+<h2>2.3 變數種類的轉換</h2>
+<hr />
+</div>
+</div>
+<div id="chapter-3---" class="section level1">
+<h1>Chapter 3 - 物件</h1>
+<ul>
+<li><h4>物件除了最簡單的向量形式外</h4></li>
+<li><h4 id="-matrix-array-lists--data-frames-">也可以是矩陣 (matrix)，陣列 (array)，列表 (Lists)，或 資料框架 (data frames) 等</h4></li>
+</ul>
+<div id="matrix" class="section level2">
+<h2>3.1 matrix</h2>
+<ul>
+<li><h4 id="section-2"></h4></li>
+<li><h4 id="section-3"></h4></li>
+<li><h4 id="section-4"></h4></li>
+</ul>
+</div>
+<div id="section-5" class="section level2">
+<h2>3.2</h2>
+</div>
+<div class="section level2">
+<h2>3.3 物件的賦值</h2>
+</div>
+<div class="section level2">
+<h2>3.4 特別的元素</h2>
+<hr />
+</div>
+</div>
+<div id="chapter-4----1" class="section level1">
+<h1>Chapter 4 - 流程控制</h1>
+<div id="-1" class="section level2">
+<h2>4.1 邏輯判斷</h2>
+<ul>
+<li><h3>以下介紹常用的邏輯判斷符號</h3>
+<ul>
+<li><h4><strong>&lt;</strong>、<strong>&gt;</strong> ： 小於、大於。</h4></li>
+<li><h4><strong>&lt;=</strong>、<strong>&gt;=</strong> ： 小於等於、大於等於。</h4></li>
+<li><h4><strong>==</strong> ： 等於。</h4></li>
+<li><h4><strong>!=</strong> ： 不等於。</h4></li>
+<li><h4><strong>&amp;</strong> ： 交集（且）。</h4></li>
+<li><h4><strong>|</strong> ： 聯集（或）。</h4></li>
+<li><h4 id="a-in-b-ab">A <strong>%in%</strong> B ： A是否在B內。</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>3 &gt; 2</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>3 &lt; 2</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>3 &gt;= 5</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>3 &lt;= 5</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>2 == 3</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>2 != 3</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>c(1:3) &gt;= c(3:1)</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<pre class="r"><code>T &amp; T</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>T &amp; F</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>T | F</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>c(2:3) %in% c(1:3)</code></pre>
+<pre><code>## [1] TRUE TRUE</code></pre>
+</div>
+<div id="if-else-1" class="section level2">
+<h2>4.2 if else</h2>
+<ul>
+<li><h3 id="ifelse">ifelse簡易語法</h3>
+<ul>
+<li><h4 id="ifelse-atrue-bfalse">ifelse(條件式, A(TRUE) , B(FALSE) )</h4>
+<h5 id="truea">如果條件式判斷為TRUE，則為A </br></h5>
+<h5 id="falseb">如果條件式判斷為FALSE，則為B</h5></li>
+</ul></li>
+</ul>
+<pre class="r"><code>ifelse( 3 &gt; 2 , 3 + 2 , 3 - 2 ) #如果3&gt;2成立，則執行3+2，否則執行3-2</code></pre>
+<pre><code>## [1] 5</code></pre>
+<ul>
+<li><h3>條件執行</h3>
+<ul>
+<li><h4 id="if-a">if   A條件式</br></h4>
+<h5 id="atrue">      {A條件式判斷為TRUE，則執行此區塊}</br></h5>
+<h5 id="else-if-b">else if   B條件式</br></h5>
+<h5 id="afalsebtrue">      {A條件式判斷為FALSE，且B條件式判斷為TRUE，則執行此區塊}</br></h5>
+<h5 id="else">else</br></h5>
+<h5 id="abfalse">      {A條件式和B條件式皆判斷為FALSE，則執行此區塊}</br></h5></li>
+</ul></li>
+</ul>
+<pre class="r"><code>if(3 &lt; 2){
+  3 + 2               # 如果 &quot;3 &lt; 2&quot; 為TRUE，則執行3 + 2
+}else if (3 == 2){
+  3 * 2               # 否則如果 &quot;3 == 2&quot; 為TRUE，則執行3 * 2
+}else{               
+  3 - 2               # 如果 &quot;3 &lt; 2&quot;和 &quot;3 == 2&quot; 皆為FALSE，則執行3 - 2
+}</code></pre>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="-1" class="section level2">
+<h2>4.3 迴圈結構</h2>
+<ul>
+<li><h3 id="for">for迴圈</h3></li>
+</ul>
+<pre class="r"><code>x &lt;- 0
+for(i in 1:5){
+  x &lt;- x + i
+  print(x)
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 3
+## [1] 6
+## [1] 10
+## [1] 15</code></pre>
+<pre class="r"><code>x</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>cumsum(1:5)    # cumsum : 累加</code></pre>
+<pre><code>## [1]  1  3  6 10 15</code></pre>
+</div>
 </div>
 
 
