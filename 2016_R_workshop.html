@@ -235,24 +235,31 @@ div.tocify {
 <ul>
 <li><h4 id="r-">1.1 R 的基本資料屬性</h4></li>
 <li><h4>1.2 常見基本運算</h4></li>
+<li><h4>1.3 常用語法</h4></li>
 </ul></li>
-<li><h3 id="chapter-2---">Chapter 2 - 變數與物件</h3>
+<li><h3 id="chapter-2---vectors">Chapter 2 - Vectors</h3>
 <ul>
-<li><h4 id="vector">2.1 Vector</h4></li>
-<li><h4 id="object">2.2 Object</h4></li>
-<li><h4 id="factor">2.3 Factor</h4></li>
-<li><h4 id="list">2.4 List</h4></li>
+<li><h4>2.1 變數的種類</h4></li>
+<li><h4>2.2 變數的賦值</h4></li>
+<li><h4>2.3 變數種類的轉換</h4></li>
 </ul></li>
-<li><h3 id="chapter-3---data-frame">Chapter 3 - Data Frame</h3>
+<li><h3 id="chapter-3---">Chapter 3 - 物件</h3>
 <ul>
-<li><h4 id="section">3.1</h4></li>
-<li><h4 id="section-1">3.2</h4></li>
+<li><h4 id="matrix">3.1 Matrix</h4></li>
+<li><h4 id="lists">3.2 Lists</h4></li>
+<li><h4 id="data-frame">3.3 Data frame</h4></li>
+<li><h4>3.4 特別的元素</h4></li>
 </ul></li>
 <li><h3 id="chapter-4---">Chapter 4 - 流程控制</h3>
 <ul>
 <li><h4>4.1 邏輯判斷</h4></li>
 <li><h4 id="if-else">4.2 if else</h4></li>
 <li><h4>4.3 迴圈結構</h4></li>
+</ul></li>
+<li><h3 id="chapter-5---">Chapter 5 - 資料處理分析</h3>
+<ul>
+<li><h4>5.1 讀取資料</h4></li>
+<li><h4 id="-dplyr">5.2 實用工具 dplyr</h4></li>
 </ul></li>
 </ul>
 <hr />
@@ -272,7 +279,7 @@ div.tocify {
 <h5 id="ex-1-2-3">ex: 1, 2, 3,…</h5></li>
 <li><h4 id="logical">Logical</h4>
 <h5 id="ex-true-or-false">ex: TRUE or FALSE</h5></li>
-<li><h4 id="factor-1">Factor</h4>
+<li><h4 id="factor">Factor</h4>
 <h5 id="ex">ex:</h5></li>
 </ol></li>
 </ul>
@@ -333,7 +340,7 @@ div.tocify {
 <pre class="r"><code>abs(-4.7)         # 取絕對值</code></pre>
 <pre><code>## [1] 4.7</code></pre>
 </div>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>1.3 常用語法</h2>
 <ul>
 <li><h3>基本統計量</h3></li>
@@ -352,7 +359,7 @@ div.tocify {
 <hr />
 </div>
 </div>
-<div id="chapter-2---vectors" class="section level1">
+<div id="chapter-2---vectors-1" class="section level1">
 <h1>Chapter 2 - Vectors</h1>
 <ul>
 <li><h4 id="-r-">在 R 中，每一樣<strong>東西</strong>，都叫做<strong>物件</strong></h4></li>
@@ -362,7 +369,7 @@ div.tocify {
 </ul>
 <pre class="r"><code>c( 1 , 2 , 3 )</code></pre>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>2.1 變數的種類</h2>
 <ul>
 <li><h3>變數的種類可分為</h3></li>
@@ -388,40 +395,43 @@ div.tocify {
 <pre class="r"><code>class( TRUE )</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 </div>
-<div id="factor-2" class="section level4">
+<div id="factor-1" class="section level4">
 <h4>5. Factor</h4>
 </div>
 </div>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>2.2 變數的賦值</h2>
 </div>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>2.3 變數種類的轉換</h2>
 <hr />
 </div>
 </div>
-<div id="chapter-3---" class="section level1">
+<div id="chapter-3----1" class="section level1">
 <h1>Chapter 3 - 物件</h1>
 <ul>
 <li><h4>物件除了最簡單的向量形式外</h4></li>
-<li><h4 id="-matrix-array-lists--data-frames-">也可以是矩陣 (matrix)，陣列 (array)，列表 (Lists)，或 資料框架 (data frames) 等</h4></li>
+<li><h4 id="-matrix-lists--data-frames-">也可以是矩陣 (matrix)，列表 (Lists)，或 資料框架 (data frames) 等</h4></li>
 </ul>
-<div id="matrix" class="section level2">
-<h2>3.1 matrix</h2>
-<ul>
-<li><h4 id="section-2"></h4></li>
-<li><h4 id="section-3"></h4></li>
-<li><h4 id="section-4"></h4></li>
-</ul>
+<div id="matrix-1" class="section level2">
+<h2>3.1 Matrix</h2>
 </div>
-<div id="section-5" class="section level2">
-<h2>3.2</h2>
+<div id="lists-1" class="section level2">
+<h2>3.2 Lists</h2>
 </div>
-<div class="section level2">
-<h2>3.3 物件的賦值</h2>
+<div id="data-frame-1" class="section level2">
+<h2>3.3 Data frame</h2>
 </div>
-<div class="section level2">
+<div id="-1" class="section level2">
 <h2>3.4 特別的元素</h2>
+<ul>
+<li><h3 id="na">NA</h3></li>
+<li><h3 id="inf">Inf</h3></li>
+<li><h3 id="nan">NaN</h3>
+<ul>
+<li><strong>N</strong>ot a <strong>N</strong>umber</li>
+</ul></li>
+</ul>
 <hr />
 </div>
 </div>
@@ -515,6 +525,47 @@ for(i in 1:5){
 <pre><code>## [1] 15</code></pre>
 <pre class="r"><code>cumsum(1:5)    # cumsum : 累加</code></pre>
 <pre><code>## [1]  1  3  6 10 15</code></pre>
+<hr />
+</div>
+</div>
+<div id="chapter-5----1" class="section level1">
+<h1>Chapter 5 - 資料處理分析</h1>
+<div id="-1" class="section level2">
+<h2>5.1 讀取資料</h2>
+<ul>
+<li><h3 id="getwd">getwd</h3></li>
+<li><h3 id="setwd">setwd</h3></li>
+<li><h3 id="csv-file">csv file</h3>
+<ul>
+<li>read.csv</li>
+<li>write.csv</li>
+</ul></li>
+<li><h3 id="txt-file">txt file</h3>
+<ul>
+<li>read.table</li>
+<li>sep,header</li>
+</ul></li>
+<li><h3 id="scan">scan</h3></li>
+<li><h3>文字編碼問題</h3></li>
+</ul>
+</div>
+<div id="-dplyr-1" class="section level2">
+<h2>5.2 實用工具 dplyr</h2>
+<ul>
+<li><h3 id="select">select</h3></li>
+<li><h3 id="filter">filter</h3></li>
+<li><h3 id="mutate">mutate</h3></li>
+<li><h3 id="arrange">arrange</h3></li>
+<li><h3 id="summarise">summarise</h3></li>
+<li><h3 id="group_by">group_by</h3></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="r" class="section level1">
+<h1>R的補充資源與學習教材</h1>
+<div id="r" class="section level3">
+<h3>1. <a href="http://datascienceandr.org/">R翻轉教室</a></h3>
 </div>
 </div>
 
