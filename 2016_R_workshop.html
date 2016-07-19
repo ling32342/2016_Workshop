@@ -227,65 +227,10 @@ div.tocify {
 
 <pre><code>Contact me:
   mail to ling32342@gmail.com</code></pre>
-<hr />
-<div id="outline" class="section level1">
-<h1>Outline</h1>
-<ul>
-<li><h3 id="chapter-1---">Chapter 1 - 基本運算</h3>
-<ul>
-<li><h4 id="r-">1.1 R 的基本資料屬性</h4></li>
-<li><h4>1.2 常見基本運算</h4></li>
-<li><h4>1.3 常用語法</h4></li>
-</ul></li>
-<li><h3 id="chapter-2---vectors">Chapter 2 - Vectors</h3>
-<ul>
-<li><h4>2.1 變數的種類</h4></li>
-<li><h4>2.2 變數的賦值</h4></li>
-<li><h4>2.3 變數種類的轉換</h4></li>
-</ul></li>
-<li><h3 id="chapter-3---">Chapter 3 - 物件</h3>
-<ul>
-<li><h4 id="matrix">3.1 Matrix</h4></li>
-<li><h4 id="lists">3.2 Lists</h4></li>
-<li><h4 id="data-frame">3.3 Data frame</h4></li>
-<li><h4>3.4 特別的元素</h4></li>
-</ul></li>
-<li><h3 id="chapter-4---">Chapter 4 - 流程控制</h3>
-<ul>
-<li><h4>4.1 邏輯判斷</h4></li>
-<li><h4 id="if-else">4.2 if else</h4></li>
-<li><h4>4.3 迴圈結構</h4></li>
-</ul></li>
-<li><h3 id="chapter-5---">Chapter 5 - 資料處理分析</h3>
-<ul>
-<li><h4>5.1 讀取資料</h4></li>
-<li><h4 id="-dplyr">5.2 實用工具 dplyr</h4></li>
-</ul></li>
-</ul>
-<hr />
-</div>
-<div id="chapter-1----1" class="section level1">
+<div id="chapter-1---" class="section level1">
 <h1>Chapter 1 - 基本運算</h1>
-<div id="r--1" class="section level2">
-<h2>1.1 R 的基本資料屬性</h2>
-<ul>
-<li><h3 id="r-">R 的基本資料屬性可分為</h3>
-<ol style="list-style-type: decimal">
-<li><h4 id="character">Character</h4>
-<h5 id="ex-00">ex: “我是00”</h5></li>
-<li><h4 id="numeric">Numeric</h4>
-<h5 id="ex-1.1-2.889-.">ex: 1.1, 2.889, ….</h5></li>
-<li><h4 id="integer">Integer</h4>
-<h5 id="ex-1-2-3">ex: 1, 2, 3,…</h5></li>
-<li><h4 id="logical">Logical</h4>
-<h5 id="ex-true-or-false">ex: TRUE or FALSE</h5></li>
-<li><h4 id="factor">Factor</h4>
-<h5 id="ex">ex:</h5></li>
-</ol></li>
-</ul>
-</div>
-<div id="-1" class="section level2">
-<h2>1.2 常見基本運算</h2>
+<div class="section level2">
+<h2>1.1 常見基本運算</h2>
 <ul>
 <li><h3>加減乘除</h3></li>
 </ul>
@@ -340,8 +285,8 @@ div.tocify {
 <pre class="r"><code>abs(-4.7)         # 取絕對值</code></pre>
 <pre><code>## [1] 4.7</code></pre>
 </div>
-<div id="-1" class="section level2">
-<h2>1.3 常用語法</h2>
+<div class="section level2">
+<h2>1.2 常用語法</h2>
 <ul>
 <li><h3>基本統計量</h3></li>
 </ul>
@@ -359,7 +304,7 @@ div.tocify {
 <hr />
 </div>
 </div>
-<div id="chapter-2---vectors-1" class="section level1">
+<div id="chapter-2---vectors" class="section level1">
 <h1>Chapter 2 - Vectors</h1>
 <ul>
 <li><h4 id="-r-">在 R 中，每一樣<strong>東西</strong>，都叫做<strong>物件</strong></h4></li>
@@ -369,63 +314,240 @@ div.tocify {
 </ul>
 <pre class="r"><code>c( 1 , 2 , 3 )</code></pre>
 <pre><code>## [1] 1 2 3</code></pre>
-<div id="-1" class="section level2">
+<div class="section level2">
 <h2>2.1 變數的種類</h2>
 <ul>
 <li><h3>變數的種類可分為</h3></li>
+<li><h4 id="integer">1. Integer</h4>
+<h5 id="ex-1-2-3">            ex : 1, 2, 3</h5></li>
+<li><h4 id="numeric">2. Numeric</h4></li>
 </ul>
-<div id="integer-1" class="section level4">
-<h4>1. Integer</h4>
-<div id="ex-1-2-3-1" class="section level5">
-<h5>            ex : 1, 2, 3</h5>
-</div>
-</div>
-<div id="numeric-1" class="section level4">
-<h4>2. Numeric</h4>
 <pre class="r"><code>class(c( 1.1 , 1.2 , 1.3 ))</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-</div>
-<div id="character-1" class="section level4">
-<h4>3. Character</h4>
+<ul>
+<li><h4 id="character">3. Character</h4></li>
+</ul>
 <pre class="r"><code>class(&quot;我是00&quot;)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-</div>
-<div id="logical-1" class="section level4">
-<h4>4. Logical</h4>
+<ul>
+<li><h4 id="logical">4. Logical</h4>
+<ul>
+<li><h5 id="true-or-false">TRUE or FALSE</h5></li>
+</ul></li>
+</ul>
 <pre class="r"><code>class( TRUE )</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
+<ul>
+<li><h4 id="factor">5. Factor</h4></li>
+</ul>
+<pre class="r"><code>x &lt;- c(&quot;A&quot;,&quot;B&quot;)
+factor(x)</code></pre>
+<pre><code>## [1] A B
+## Levels: A B</code></pre>
+<pre class="r"><code>factor(x,levels = c(x[2],x[1]))</code></pre>
+<pre><code>## [1] A B
+## Levels: B A</code></pre>
+<ul>
+<li><h4>種類有順序之分</h4>
+<h5 id="character-number-logical">            Character &gt; Number &gt; Logical</h5></li>
+</ul>
+<pre class="r"><code>class(c('A',1))</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>class(c('B',T))</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>class(c(1,T))</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
 </div>
-<div id="factor-1" class="section level4">
-<h4>5. Factor</h4>
-</div>
-</div>
-<div id="-1" class="section level2">
+<div class="section level2">
 <h2>2.2 變數的賦值</h2>
+<ul>
+<li><h4 id="a.-">a. 種類一致的狀況</h4></li>
+</ul>
+<pre class="r"><code>x &lt;- c(1,2,3)
+y &lt;- c(4,5,6)
+x+y</code></pre>
+<pre><code>## [1] 5 7 9</code></pre>
+<pre class="r"><code>x*y</code></pre>
+<pre><code>## [1]  4 10 18</code></pre>
+<pre class="r"><code>x/y</code></pre>
+<pre><code>## [1] 0.25 0.40 0.50</code></pre>
+<ul>
+<li><h4 id="b.-">b. 種類不一致的狀況</h4>
+<ul>
+<li><h4 id="note-character-number-logical">Note : Character &gt; Number &gt; Logical</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>x &lt;- c(1,2,'a')
+class(x)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>y &lt;- c(1,2,TRUE)
+class(y)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>z &lt;- c('a',1,TRUE)
+class(z)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
 </div>
-<div id="-1" class="section level2">
+<div class="section level2">
 <h2>2.3 變數種類的轉換</h2>
+<div class="section level4">
+<h4>有時候資料並非為我們預想中的資料型態，因此我們需要做轉換</h4>
+<ul>
+<li><h4 id="as.numeric">as.numeric</h4>
+<ul>
+<li><h4 id="numeric">轉成numeric型態</h4></li>
+<li><h4 id="na">若轉換過去沒有對應到數字則會出現NA</h4></li>
+<li><h4 id="factor-numeric">注意factor ==&gt; numeric</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>x &lt;- c('1','2')
+as.numeric(x)</code></pre>
+<pre><code>## [1] 1 2</code></pre>
+<pre class="r"><code>y &lt;- c('1','a')
+as.numeric(y)</code></pre>
+<pre><code>## Warning: 強制變更過程中產生了 NA</code></pre>
+<pre><code>## [1]  1 NA</code></pre>
+<pre class="r"><code>z &lt;- factor(c('a','b','c'))
+as.numeric(z)</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<pre class="r"><code>z1 &lt;- factor(c('a','b','c'),levels=c('c','b','a'))
+as.numeric(z1)</code></pre>
+<pre><code>## [1] 3 2 1</code></pre>
+<pre class="r"><code>w &lt;- factor(c('4','5','6'))
+as.numeric(w)</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<ul>
+<li><h4 id="as.character">as.character</h4>
+<ul>
+<li><h4 id="character">轉成character型態</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>x &lt;- c(1,2,3)
+as.character(x)</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
+<ul>
+<li><h4 id="as.factor">as.factor</h4></li>
+</ul>
+<pre class="r"><code>x &lt;- c(1,2,3)
+as.factor(x)</code></pre>
+<pre><code>## [1] 1 2 3
+## Levels: 1 2 3</code></pre>
+<pre class="r"><code>y &lt;- c('a','b','c')
+as.factor(y)</code></pre>
+<pre><code>## [1] a b c
+## Levels: a b c</code></pre>
 <hr />
 </div>
 </div>
-<div id="chapter-3----1" class="section level1">
+</div>
+<div id="chapter-3---" class="section level1">
 <h1>Chapter 3 - 物件</h1>
 <ul>
 <li><h4>物件除了最簡單的向量形式外</h4></li>
 <li><h4 id="-matrix-lists--data-frames-">也可以是矩陣 (matrix)，列表 (Lists)，或 資料框架 (data frames) 等</h4></li>
+<li><h4>簡單來說就是用來儲存一大堆<strong>變數(向量)</strong>的東西</h4></li>
 </ul>
-<div id="matrix-1" class="section level2">
+<div id="matrix" class="section level2">
 <h2>3.1 Matrix</h2>
-</div>
-<div id="lists-1" class="section level2">
-<h2>3.2 Lists</h2>
-</div>
-<div id="data-frame-1" class="section level2">
-<h2>3.3 Data frame</h2>
-</div>
-<div id="-1" class="section level2">
-<h2>3.4 特別的元素</h2>
 <ul>
-<li><h3 id="na">NA</h3></li>
+<li><h4 id="matrix">Matrix如同線性代數中學的，有列有行，存放一定是數值</h4></li>
+<li><h4 id="matrix">Matrix可以由一長串的向量去轉換而成，告訴他維度即可</h4></li>
+</ul>
+<pre class="r"><code>## 1~9的打法可以打 : 
+## == 是用來判斷有沒有相等
+1:9 == c(1,2,3,4,5,6,7,8,9)</code></pre>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<pre class="r"><code>matrix(c(1:9),nrow=3) </code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<pre class="r"><code>matrix(c(1:9),nrow=3,ncol=3) # same</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<pre class="r"><code>matrix(c(1:9),nrow=3,byrow = T)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<pre class="r"><code># 矩陣相乘
+matrix(c(1:4),nrow=2,byrow = T) %*% matrix(c(5:8),nrow=2,byrow = T)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]   19   22
+## [2,]   43   50</code></pre>
+<pre class="r"><code># 相對應元素相乘
+matrix(c(1:4),nrow=2,byrow = T) * matrix(c(5:8),nrow=2,byrow = T)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    5   12
+## [2,]   21   32</code></pre>
+</div>
+<div id="data-frame" class="section level2">
+<h2>3.2 Data frame</h2>
+<ul>
+<li><h4 id="data.frame-">Data.frame內存放一大堆變數(向量), 變數間型態可以不同</h4></li>
+<li><h4>限制：變數間長度必須一樣</h4></li>
+</ul>
+<pre class="r"><code>data &lt;- data.frame(x1=c(1,2,3), #若要換行則此逗號要擺這
+                   x2=c('a','b','c'))
+
+data &lt;- data.frame(x1=c(1,2,3,4), 
+                   x2=c('a','b','c'))</code></pre>
+<pre><code>## Error in data.frame(x1 = c(1, 2, 3, 4), x2 = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)) : 
+  arguments imply differing number of rows: 4, 3</code></pre>
+</div>
+<div id="lists" class="section level2">
+<h2>3.3 Lists</h2>
+<ul>
+<li><h4 id="data.frame">彈性較大的物件，想像成一種Data.frame，但允許變數長度不同</h4></li>
+<li><h4 id="data.frame--list--">Data.frame 為 List 的一種特例: 長度相同</h4></li>
+</ul>
+<pre class="r"><code>lst &lt;- list(list1=c(1:5),
+            list2=c('a','b'))</code></pre>
+</div>
+<div class="section level2">
+<h2>3.4 取變數</h2>
+<ul>
+<li><h4>想像以上物件是一個很大的衣櫃，變數(向量)就是衣櫃裡的所有的抽屜</h4></li>
+<li><h4>你可以自行選取你要從衣櫃中取出哪些抽屜，元素可以看成抽屜裡的衣服</h4></li>
+<li><h4>簡單來說方法有兩種: <strong>$</strong> , <strong>[ ]</strong></h4></li>
+</ul>
+<pre class="r"><code>## Data.frame
+data &lt;- data.frame(Date=c('7/23','7/23'),
+                   Come=c(T,F),
+                   Time=c(3,6))</code></pre>
+<pre class="r"><code>## 好，我要從Data中取出日期的變數(欄位、向量、抽屜)
+data$Date</code></pre>
+<pre><code>## [1] 7/23 7/23
+## Levels: 7/23</code></pre>
+<pre class="r"><code>data[,1]</code></pre>
+<pre><code>## [1] 7/23 7/23
+## Levels: 7/23</code></pre>
+<pre class="r"><code>## 好，我要從Data中取出是否會來的變數(欄位、向量、抽屜)
+data$Come</code></pre>
+<pre><code>## [1]  TRUE FALSE</code></pre>
+<pre class="r"><code>data[,2]</code></pre>
+<pre><code>## [1]  TRUE FALSE</code></pre>
+<pre class="r"><code>## List
+data &lt;- list(Date=c('7/23','7/24','7/25','7/26'),
+                   Come=c(T,F),
+                   Time=c(3,6))</code></pre>
+<pre class="r"><code>## 好，我要從Data中取出日期的變數(欄位、向量、抽屜)
+## 只是今天衣櫃的每個抽屜長度可以不一樣
+data$Date</code></pre>
+<pre><code>## [1] &quot;7/23&quot; &quot;7/24&quot; &quot;7/25&quot; &quot;7/26&quot;</code></pre>
+<pre class="r"><code>data[1]</code></pre>
+<pre><code>## $Date
+## [1] &quot;7/23&quot; &quot;7/24&quot; &quot;7/25&quot; &quot;7/26&quot;</code></pre>
+<pre class="r"><code>data[[1]]</code></pre>
+<pre><code>## [1] &quot;7/23&quot; &quot;7/24&quot; &quot;7/25&quot; &quot;7/26&quot;</code></pre>
+<pre class="r"><code>data[[1]][2]</code></pre>
+<pre><code>## [1] &quot;7/24&quot;</code></pre>
+</div>
+<div class="section level2">
+<h2>3.5 特別的元素</h2>
+<ul>
+<li><h3 id="na-1">NA</h3></li>
 <li><h3 id="inf">Inf</h3></li>
 <li><h3 id="nan">NaN</h3>
 <ul>
@@ -435,9 +557,9 @@ div.tocify {
 <hr />
 </div>
 </div>
-<div id="chapter-4----1" class="section level1">
+<div id="chapter-4---" class="section level1">
 <h1>Chapter 4 - 流程控制</h1>
-<div id="-1" class="section level2">
+<div class="section level2">
 <h2>4.1 邏輯判斷</h2>
 <ul>
 <li><h3>以下介紹常用的邏輯判斷符號</h3>
@@ -471,10 +593,10 @@ div.tocify {
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>T | F</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code>c(2:3) %in% c(1:3)</code></pre>
-<pre><code>## [1] TRUE TRUE</code></pre>
+<pre class="r"><code>c(2,5,3) %in% c(1:3)</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
 </div>
-<div id="if-else-1" class="section level2">
+<div id="if-else" class="section level2">
 <h2>4.2 if else</h2>
 <ul>
 <li><h3 id="ifelse">ifelse簡易語法</h3>
@@ -506,7 +628,7 @@ div.tocify {
 }</code></pre>
 <pre><code>## [1] 1</code></pre>
 </div>
-<div id="-1" class="section level2">
+<div class="section level2">
 <h2>4.3 迴圈結構</h2>
 <ul>
 <li><h3 id="for">for迴圈</h3></li>
@@ -528,29 +650,90 @@ for(i in 1:5){
 <hr />
 </div>
 </div>
-<div id="chapter-5----1" class="section level1">
+<div id="chapter-5---" class="section level1">
 <h1>Chapter 5 - 資料處理分析</h1>
-<div id="-1" class="section level2">
-<h2>5.1 讀取資料</h2>
+<div id="r" class="section level2">
+<h2>5.1 設定R工作環境</h2>
 <ul>
-<li><h3 id="getwd">getwd</h3></li>
-<li><h3 id="setwd">setwd</h3></li>
+<li><h3 id="-get-working-directory">查詢工作目錄 (get working directory)</h3>
+<ul>
+<li><h4 id="getwd">getwd:看目前工作目錄在哪裡</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>getwd()</code></pre>
+<pre><code>## [1] &quot;/Users/hsiaoling/Desktop/Code/Program/Workshop&quot;</code></pre>
+<ul>
+<li><h3 id="-set-working-directory">設定工作目錄 (set working directory)</h3>
+<ul>
+<li><h4 id="setwd">setwd:直接手動設定工作目錄</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code># Windows
+setwd(&quot;C:\\Users&quot;)
+
+# Mac
+setwd(&quot;/Users/hsiaoling/Desktop&quot;)</code></pre>
+</div>
+<div class="section level2">
+<h2>5.2 讀取資料</h2>
+<ul>
 <li><h3 id="csv-file">csv file</h3>
 <ul>
-<li>read.csv</li>
-<li>write.csv</li>
+<li><h4 id="write.csvcsv">write.csv：匯出csv檔</h4></li>
+<li><h4 id="read.csvcsv">read.csv：讀入csv檔</h4></li>
 </ul></li>
-<li><h3 id="txt-file">txt file</h3>
-<ul>
-<li>read.table</li>
-<li>sep,header</li>
-</ul></li>
-<li><h3 id="scan">scan</h3></li>
-<li><h3>文字編碼問題</h3></li>
 </ul>
+<pre class="r"><code>demo &lt;- iris 
+
+# 直接將demo.csv存至剛剛設定的工作目錄
+write.csv(demo,&quot;demo.csv&quot;)
+
+# 將demo.csv存至指定路徑
+write.csv(demo,&quot;/Users/hsiaoling/Desktop/Code/Program/Workshop/demo.csv&quot;)</code></pre>
+<pre class="r"><code># 將剛剛匯出的demo.csv檔讀進來
+data &lt;- read.csv(&quot;/Users/hsiaoling/Desktop/Code/Program/Workshop/demo.csv&quot;)
+    # or
+data &lt;- read.csv(file.choose())</code></pre>
+<ul>
+<li><h3 id="read.table">read.table</h3>
+<ul>
+<li><h4 id="header">header：第一列是否為資料行名稱</h4></li>
+<li><h4 id="sepcsv-">sep：行與行之間以什麼做分割（csv為以 <strong>,</strong> 做區隔）</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>data &lt;- read.table(&quot;/Users/hsiaoling/Desktop/Code/Program/Workshop/demo.csv&quot;,header = T,sep = ',')</code></pre>
+<ul>
+<li><h3 id="scan">scan</h3>
+<ul>
+<li><h4 id="enterenter">連續輸入數字，按一次enter鍵可以輸入下一筆數字，連按兩次enter將結束輸入。</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>s &lt;- scan()</code></pre>
+<pre><code>&gt; s &lt;- scan()
+1: 5
+2: 4
+3: 0
+4: 0
+5: 
+Read 4 items
+
+&gt; s
+[1] 5 4 0 0</code></pre>
+<ul>
+<li><h3>文字編碼問題</h3>
+<ul>
+<li><h4 id="mac-utf8--windows-big5">Mac-utf8 讀取 windows-big5編碼</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>data &lt;- read.csv(&quot;demo.csv&quot;,fileEncoding = 'big5')</code></pre>
+<pre><code>* #### windows-big5 讀取 Mac-utf8 編碼</code></pre>
+<pre class="r"><code>data &lt;- read.csv(&quot;demo.csv&quot;,fileEncoding = 'utf8')</code></pre>
 </div>
-<div id="-dplyr-1" class="section level2">
-<h2>5.2 實用工具 dplyr</h2>
+<div id="data-frame" class="section level2">
+<h2>5.3 Data frame操作</h2>
+</div>
+<div id="-dplyr" class="section level2">
+<h2>5.3 實用工具 dplyr</h2>
 <ul>
 <li><h3 id="select">select</h3></li>
 <li><h3 id="filter">filter</h3></li>
@@ -559,13 +742,6 @@ for(i in 1:5){
 <li><h3 id="summarise">summarise</h3></li>
 <li><h3 id="group_by">group_by</h3></li>
 </ul>
-<hr />
-</div>
-</div>
-<div id="r" class="section level1">
-<h1>R的補充資源與學習教材</h1>
-<div id="r" class="section level3">
-<h3>1. <a href="http://datascienceandr.org/">R翻轉教室</a></h3>
 </div>
 </div>
 
