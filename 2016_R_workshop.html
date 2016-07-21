@@ -570,9 +570,16 @@ lst</code></pre>
 <div class="section level2">
 <h2>3.4 取變數</h2>
 <ul>
-<li><h4>想像以上物件是一個很大的衣櫃，變數(向量)就是衣櫃裡的所有的抽屜</h4></li>
-<li><h4>你可以自行選取你要從衣櫃中取出哪些抽屜，元素可以看成抽屜裡的衣服</h4></li>
-<li><h4>簡單來說方法有兩種: <strong>$</strong> , <strong>[ ]</strong></h4></li>
+<li><h4>想像以上物件是一個很大的衣櫃，變數(向量)就是衣櫃裡的所有的抽屜</h4>
+<h4>你可以自行選取你要從衣櫃中取出哪些抽屜，元素可以看成抽屜裡的衣服</h4>
+</br></li>
+<li><h4 id="dataframe">Dataframe取值</h4>
+<ul>
+<li><h4 id="ij--dataframe--i--j-">利用[i,j] 來對 dataframe 進行取值的動作，其中， i 為列數、 j 為行數</h4></li>
+<li><h4 id="i--dataframe--i-">[i,] 表示取出 dataframe 中第 i 列的所有資料，包含所有行變數</h4></li>
+<li><h4 id="j--dataframe--j-">[,j] 表示取出 dataframe 中第 j 行的所有資料，包含所有列資料</h4></li>
+<li><h4 id="tab">$ (錢字號)這裡可以用來挑選特定欄位！記得搭配tab鍵讓你事半功倍！</h4></li>
+</ul></li>
 </ul>
 <pre class="r"><code>## Data.frame
 data &lt;- data.frame(Date=c('7/23','7/23'),
@@ -590,6 +597,15 @@ data$Come</code></pre>
 <pre><code>## [1]  TRUE FALSE</code></pre>
 <pre class="r"><code>data[,2]</code></pre>
 <pre><code>## [1]  TRUE FALSE</code></pre>
+<ul>
+<li><h4 id="lists">Lists取值</h4>
+<ul>
+<li><h4 id="i-list--i--list-">[i]：取出 list 中的第 i 個物件，注意！取出來的物件依舊是 list 結構！</h4></li>
+<li><h4 id="i-i--list-">[[i]]：取出第 i 個物件中的全部元素，注意！[[]]會破壞原本的 list 結構！</h4></li>
+<li><h4 id="ij-i-j">[[i]][j]：取出第 i 個物件中的第j個元素</h4></li>
+<li><h4 id="-">若物件已命名，可以利用 $ (錢字號)來提取物件</h4></li>
+</ul></li>
+</ul>
 <pre class="r"><code>## List
 data &lt;- list(Date=c('7/23','7/24','7/25','7/26'),
                    Come=c(T,F),
@@ -1265,14 +1281,10 @@ library(dplyr)</code></pre>
 </ul></li>
 </ul>
 <pre class="r"><code># 挑選資料欄位
-temp &lt;- select(data, 鄉鎮市區, 交易標的)
-head(temp)
-
-# 剔除資料欄位
-temp &lt;- select(data, -鄉鎮市區)
-head(temp)
-
-# 挑我們練習的欄位
+temp &lt;- select(data, 鄉鎮市區, 交易標的)</code></pre>
+<pre class="r"><code># 剔除資料欄位
+temp &lt;- select(data, -鄉鎮市區)</code></pre>
+<pre class="r"><code># 挑我們練習的欄位
 data.new &lt;- select(data,-c(非都市土地使用分區, 非都市土地使用編定, 交易筆棟數,
                            移轉層次, 建物現況格局.房:建物現況格局.隔間,
                            車位類別, 備註, 編號))
