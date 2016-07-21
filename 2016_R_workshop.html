@@ -228,9 +228,29 @@ div.tocify {
 <pre><code>Contact me:
   mail to ling32342@gmail.com</code></pre>
 <div id="chapter-1---" class="section level1">
-<h1>Chapter 1 - 基本運算</h1>
+<h1>Chapter 1 - 基本介紹</h1>
+<div id="introduction-to-r" class="section level2">
+<h2>1.1 Introduction to R</h2>
+<ul>
+<li><h3 id="expression">Expression</h3>
+<ul>
+<li><h4 id="-expression">每一段指令都是一個 expression</h4></li>
+<li><h4 id="-expression-r--console-">輸入有效的 expression 後，R 會執行並且把結果呈現於 Console 中</h4>
+<h5 id="eg1.-1-1">            eg1. 1 + 1</h5>
+<h5 id="eg2.-sum">            eg2. ?sum</h5></li>
+</ul></li>
+<li><h3 id="assignment">Assignment</h3>
+<ul>
+<li><h4 id="-r--expression--assignment">一般給 R 的指令不是一個 expression 就是一個 assignment</h4></li>
+<li><h4 id="object-assign--environment-">物件(object)被 assign 過後，會陳列於 Environment 中</h4></li>
+<li><h4>物件可以是變數、數字、文字、向量、函數或更複雜的東西</h4>
+<h5 id="eg1.-x---1-1-">            eg1. x &lt;- 1 + 1 (建議寫法)</h5>
+<h5 id="eg2.-y-c123">            eg2. y = c(1,2,3)</h5></li>
+</ul></li>
+</ul>
+</div>
 <div class="section level2">
-<h2>1.1 基本數學運算</h2>
+<h2>1.2 基本數學運算</h2>
 <ul>
 <li><h3>加減乘除</h3></li>
 </ul>
@@ -286,11 +306,13 @@ div.tocify {
 <pre><code>## [1] 4.7</code></pre>
 </div>
 <div class="section level2">
-<h2>1.2 基本統計量</h2>
+<h2>1.3 基本統計量</h2>
 <pre class="r"><code>x &lt;- c( 1 , 2 , 3 , 4 )    # 也可以寫成 x &lt;- 1:4</code></pre>
 <pre class="r"><code>sum(x)        # 所有值加總總和</code></pre>
 <pre><code>## [1] 10</code></pre>
 <pre class="r"><code>mean(x)       # 平均數</code></pre>
+<pre><code>## [1] 2.5</code></pre>
+<pre class="r"><code>median(x)     # 中位數</code></pre>
 <pre><code>## [1] 2.5</code></pre>
 <pre class="r"><code>var(x)        # 變異數</code></pre>
 <pre><code>## [1] 1.666667</code></pre>
@@ -304,38 +326,44 @@ div.tocify {
 <div id="chapter-2---vectors" class="section level1">
 <h1>Chapter 2 - Vectors</h1>
 <ul>
-<li><h4 id="-r-">在 R 中，每一樣<strong>東西</strong>，都叫做<strong>物件</strong></h4></li>
-<li><h4 id="r-vectors">R 物件最基本的單位是向量(Vectors)</h4></li>
-<li><h4 id="c">以c()呈現向量，向量中的元素以逗號分隔</h4></li>
-<li><h4 id="eg.-c1-2-3-1-2-3">eg. c(1, 2, 3) 為一包含元素1, 2, 3的向量</h4></li>
+<li><h4 id="-r-">在 R 中，每一樣<strong>東西</strong>，都叫做<strong>物件</strong></h4>
+<h4 id="r-vectors">R 物件最基本的單位是向量(Vectors)</h4>
+<h4 id="c">以c()呈現向量，向量中的元素以逗號分隔</h4>
+<h4 id="eg.-c1-2-3-1-2-3">eg. c(1, 2, 3) 為一包含元素1, 2, 3的向量</h4></li>
 </ul>
 <pre class="r"><code>c( 1 , 2 , 3 )</code></pre>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="section level2">
-<h2>2.1 變數的種類</h2>
+<h2>2.1 向量的類別</h2>
+<div class="section level3">
+<h3>向量可分為</h3>
 <ul>
-<li><h3>變數的種類可分為</h3></li>
-<li><h4 id="integer">1. Integer</h4>
-<h5 id="ex-1-2-3">            ex : 1, 2, 3</h5></li>
-<li><h4 id="numeric">2. Numeric</h4></li>
+<li><h4 id="numeric-vector">1. 數值向量(numeric vector)</h4>
+<ul>
+<li><h5 id="eg.-1-2-3">eg. 1, 2, 3</h5></li>
+<li><h5 id="eg.-1.32-2.78">eg. 1.32, 2.78</h5></li>
+</ul></li>
 </ul>
-<pre class="r"><code>class(c( 1.1 , 1.2 , 1.3 ))</code></pre>
+<pre class="r"><code>class(c( 1 , 2 , 3 ))</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <ul>
-<li><h4 id="character">3. Character</h4></li>
+<li><h4 id="character-vector">2. 字串向量(character vector)</h4></li>
 </ul>
-<pre class="r"><code>class(&quot;我是00&quot;)</code></pre>
+<pre class="r"><code>class(c(&quot;我是00&quot;,&quot;他是閔閔&quot;))</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <ul>
-<li><h4 id="logical">4. Logical</h4>
+<li><h4 id="logical-vector">3. 布林向量(logical vector)</h4>
 <ul>
 <li><h5 id="true-or-false">TRUE or FALSE</h5></li>
 </ul></li>
 </ul>
-<pre class="r"><code>class( TRUE )</code></pre>
+<pre class="r"><code>class( c( TRUE, FALSE) )</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <ul>
-<li><h4 id="factor">5. Factor</h4></li>
+<li><h4 id="factor">4. Factor</h4>
+<ul>
+<li><h5 id="level">有LEVEL的設定</h5></li>
+</ul></li>
 </ul>
 <pre class="r"><code>x &lt;- c(&quot;A&quot;,&quot;B&quot;)
 factor(x)</code></pre>
@@ -346,7 +374,7 @@ factor(x)</code></pre>
 ## Levels: B A</code></pre>
 <ul>
 <li><h4>種類有順序之分</h4>
-<h5 id="character-number-logical">            Character &gt; Number &gt; Logical</h5></li>
+<h5 id="character-numeric-logical">            Character &gt; Numeric &gt; Logical</h5></li>
 </ul>
 <pre class="r"><code>class(c('A',1))</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -355,14 +383,35 @@ factor(x)</code></pre>
 <pre class="r"><code>class(c(1,T))</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 </div>
+</div>
 <div class="section level2">
-<h2>2.2 變數的賦值</h2>
+<h2>2.2 向量的運算</h2>
+<ul>
+<li><h4>向量+向量</h4>
+<ul>
+<li><h5 id="-r-">在 R 中，大部份的運算都是向量式的</h5></li>
+<li><h5>當多組向量在進行運算時，會由相對應位置的元素進行運算</h5></li>
+<li><h5 id="r-">當向量長度不同時，R 會重複較短的向量，補足至與較長向量長度一樣</h5></li>
+</ul></li>
+</ul>
+<pre class="r"><code>c(1, 2, 3) + c(1, 2, 3)</code></pre>
+<pre><code>## [1] 2 4 6</code></pre>
+<pre class="r"><code>1 + c(1, 2, 3)</code></pre>
+<pre><code>## [1] 2 3 4</code></pre>
+<pre class="r"><code>c(1, 2) + c(1, 2, 3)</code></pre>
+<pre><code>## Warning in c(1, 2) + c(1, 2, 3): 較長的物件長度並非較短物件長度的倍數</code></pre>
+<pre><code>## [1] 2 4 4</code></pre>
+<pre class="r"><code>c(1, 2) + c(1, 2, 3, 4)</code></pre>
+<pre><code>## [1] 2 4 4 6</code></pre>
+</div>
+<div class="section level2">
+<h2>2.3 變數的賦值</h2>
 <ul>
 <li><h4 id="a.-">a. 種類一致的狀況</h4></li>
 </ul>
 <pre class="r"><code>x &lt;- c(1,2,3)
-y &lt;- c(4,5,6)
-x+y</code></pre>
+y &lt;- c(4,5,6)</code></pre>
+<pre class="r"><code>x+y</code></pre>
 <pre><code>## [1] 5 7 9</code></pre>
 <pre class="r"><code>x*y</code></pre>
 <pre><code>## [1]  4 10 18</code></pre>
@@ -385,9 +434,18 @@ class(z)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 </div>
 <div class="section level2">
-<h2>2.3 變數種類的轉換</h2>
+<h2>2.4 變數種類的轉換</h2>
 <div class="section level4">
 <h4>有時候資料並非為我們預想中的資料型態，因此我們需要做轉換</h4>
+<ul>
+<li><h4 id="as.character">as.character</h4>
+<ul>
+<li><h4 id="character">轉成character型態</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>x &lt;- c(1,2,3)
+as.character(x)</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
 <ul>
 <li><h4 id="as.numeric">as.numeric</h4>
 <ul>
@@ -412,15 +470,11 @@ as.numeric(z1)</code></pre>
 <pre class="r"><code>w &lt;- factor(c('4','5','6'))
 as.numeric(w)</code></pre>
 <pre><code>## [1] 1 2 3</code></pre>
-<ul>
-<li><h4 id="as.character">as.character</h4>
-<ul>
-<li><h4 id="character">轉成character型態</h4></li>
-</ul></li>
-</ul>
-<pre class="r"><code>x &lt;- c(1,2,3)
-as.character(x)</code></pre>
-<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
+<div id="factornumericcharacternumeric" class="section level5">
+<h5>        <em>注意：若是要由factor轉為numeric，須先轉成character再轉成numeric</em></h5>
+<pre class="r"><code>w &lt;- factor(c('4','5','6'))
+as.numeric( as.character(w) )</code></pre>
+<pre><code>## [1] 4 5 6</code></pre>
 <ul>
 <li><h4 id="as.factor">as.factor</h4></li>
 </ul>
@@ -436,12 +490,13 @@ as.factor(y)</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div id="chapter-3---" class="section level1">
 <h1>Chapter 3 - 物件</h1>
 <ul>
-<li><h4>物件除了最簡單的向量形式外</h4></li>
-<li><h4 id="-matrix-lists--data-frames-">也可以是矩陣 (matrix)，列表 (Lists)，或 資料框架 (data frames) 等</h4></li>
-<li><h4>簡單來說就是用來儲存一大堆<strong>變數(向量)</strong>的東西</h4></li>
+<li><h4>物件除了最簡單的向量形式外</h4>
+<h4 id="-matrix-lists--data-frames-">也可以是矩陣 (matrix)，列表 (Lists)，或 資料框架 (data frames) 等</h4>
+<h4>簡單來說就是用來儲存一大堆<strong>變數(向量)</strong>的東西</h4></li>
 </ul>
 <div id="matrix" class="section level2">
 <h2>3.1 Matrix</h2>
@@ -487,8 +542,12 @@ matrix(c(1:4),nrow=2,byrow = T) * matrix(c(5:8),nrow=2,byrow = T)</code></pre>
 </ul>
 <pre class="r"><code>data &lt;- data.frame(x1=c(1,2,3), #若要換行則此逗號要擺這
                    x2=c('a','b','c'))
-
-data &lt;- data.frame(x1=c(1,2,3,4), 
+data</code></pre>
+<pre><code>##   x1 x2
+## 1  1  a
+## 2  2  b
+## 3  3  c</code></pre>
+<pre class="r"><code>data &lt;- data.frame(x1=c(1,2,3,4), 
                    x2=c('a','b','c'))</code></pre>
 <pre><code>## Error in data.frame(x1 = c(1, 2, 3, 4), x2 = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)) : 
   arguments imply differing number of rows: 4, 3</code></pre>
@@ -500,7 +559,13 @@ data &lt;- data.frame(x1=c(1,2,3,4),
 <li><h4 id="data.frame--list--">Data.frame 為 List 的一種特例: 長度相同</h4></li>
 </ul>
 <pre class="r"><code>lst &lt;- list(list1=c(1:5),
-            list2=c('a','b'))</code></pre>
+            list2=c('a','b'))
+lst</code></pre>
+<pre><code>## $list1
+## [1] 1 2 3 4 5
+## 
+## $list2
+## [1] &quot;a&quot; &quot;b&quot;</code></pre>
 </div>
 <div class="section level2">
 <h2>3.4 取變數</h2>
@@ -553,7 +618,7 @@ data$Date</code></pre>
 x &lt;- c(1,2,3,NA,5)
 y &lt;- c(1,2,NA,4,5)</code></pre>
 <pre class="r"><code>## NA只要碰到加減乘除就會爆炸
-x+y </code></pre>
+x + y </code></pre>
 <pre><code>## [1]  2  4 NA NA 10</code></pre>
 <pre class="r"><code>mean(x) </code></pre>
 <pre><code>## [1] NA</code></pre>
@@ -566,7 +631,7 @@ x[4] &lt;- 4</code></pre>
 ## is.na可以回傳變數哪一個位置為NA
 is.na(y)</code></pre>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE</code></pre>
-<pre class="r"><code>y[is.na(y)] &lt;- 3</code></pre>
+<pre class="r"><code>y[ is.na(y) ] &lt;- 3</code></pre>
 <ul>
 <li><h3 id="inf">Inf</h3></li>
 </ul>
@@ -586,7 +651,74 @@ my.money+your.money</code></pre>
 <pre><code>## [1] NaN</code></pre>
 <pre class="r"><code>1/0-1/0</code></pre>
 <pre><code>## [1] NaN</code></pre>
+</div>
+<div class="section level2">
+<h2>3.6 物件的賦值</h2>
+<ul>
+<li><h3>1. 一切從賦值開始</h3>
+<ul>
+<li><h4>賦值讓我們把物件儲存在記憶體裡面，隨時可以取用</h4></li>
+</ul></li>
+</ul>
+<pre class="r"><code>data &lt;- data.frame(name=c('閔閔','安安','筠筠'),
+                   deg=c('人生勝利組','首席工程師','團花'),
+                   pro=c(60,90,85),
+                   stringsAsFactors = F) #此case,不要讓字串別成factor</code></pre>
+<ul>
+<li><h3>2. 玩弄物件</h3>
+<h4 id="a.-">a. 新增變數、刪除變數</h4></li>
+</ul>
+<pre class="r"><code>## 注意長度要一樣
+data</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90
+## 3 筠筠       團花  85</code></pre>
+<pre class="r"><code>data$win &lt;- c(F,T,T) ## Or 前面教過的另一種 data[,4] &lt;- c(T,F)
+data</code></pre>
+<pre><code>##   name        deg pro   win
+## 1 閔閔 人生勝利組  60 FALSE
+## 2 安安 首席工程師  90  TRUE
+## 3 筠筠       團花  85  TRUE</code></pre>
+<pre class="r"><code>data$win &lt;- NULL ## Or 前面教過的另一種 data &lt;- data[,-4]
+data</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90
+## 3 筠筠       團花  85</code></pre>
+<div id="b.-" class="section level4">
+<h4>        b. 新增列、刪除列</h4>
+<pre class="r"><code>data[4,] &lt;- c('00','不好說',0)
+data</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90
+## 3 筠筠       團花  85
+## 4   00     不好說   0</code></pre>
+<pre class="r"><code>data &lt;- data[-3,]
+data</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90
+## 4   00     不好說   0</code></pre>
+</div>
+<div id="c.-cbindrbind" class="section level4">
+<h4>        c. cbind、rbind</h4>
+<pre class="r"><code>## 我們要的並非只是回傳T or F，而是要整個資料阿！！！！
+data$pro &gt; 50</code></pre>
+<pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
+<pre class="r"><code>## 把T or F 放進 之前教過的[]裡面，他就會乖乖的挑選符合條件的資料出來摟
+data[ data$pro &gt; 50, ]</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90</code></pre>
+<pre class="r"><code>## 挑選變數的部分跟之前一樣！
+data$pro</code></pre>
+<pre><code>## [1] &quot;60&quot; &quot;90&quot; &quot;0&quot;</code></pre>
+<pre class="r"><code>data[,3]</code></pre>
+<pre><code>## [1] &quot;60&quot; &quot;90&quot; &quot;0&quot;</code></pre>
 <hr />
+</div>
 </div>
 </div>
 <div id="chapter-4---" class="section level1">
@@ -684,30 +816,74 @@ for(i in 1:5){
 </div>
 <div id="chapter-5---function" class="section level1">
 <h1>Chapter 5 - 常用的function</h1>
-<div id="function" class="section level4">
-<h4>接下的部份是跟大家介紹幾個較常用的function</h4>
-</div>
-<div id="function" class="section level4">
-<h4>但實際上絕對還會用到更多更多的function</h4>
-</div>
-<div class="section level4">
-<h4>所以本課程不涵蓋的部份還須各位去詢問古哥大大</h4>
-</div>
+<ul>
+<li><h4 id="function">接下的部份是跟大家介紹幾個較常用的function</h4>
+<h4 id="function">但實際上絕對還會用到更多更多的function</h4>
+<h4 id="google">所以本課程不涵蓋的部份還請各位去詢問Google大大</h4></li>
+</ul>
 <div id="in-r" class="section level3">
 <h3>1. ?in R</h3>
 <ul>
-<li><h4 id="function">忘記一個function的用法時常常用?來查詢</h4></li>
-<li><h4 id="help">或是用help()</h4></li>
+<li><h4 id="function">忘記一個function的用法時常常用?來查詢</h4>
+<h4 id="help">或是用help()</h4></li>
 </ul>
 <pre class="r"><code>?mean
 help(mean)</code></pre>
 </div>
-<div id="function" class="section level3">
-<h3>2. 自定function</h3>
+<div id="length" class="section level3">
+<h3>2. length</h3>
 <ul>
-<li><h4 id="function">有時候我們會需要自定一個function來完成某些事情</h4></li>
-<li><h4 id="function">這邊教大家如何寫一個自己的function</h4></li>
-<li><h4 id="function">假設我們沒有算平均數的function，我們要自己寫一個</h4></li>
+<li><h4 id="length">看一個向量長度時常用length</h4></li>
+</ul>
+<pre class="r"><code>length(c(1:10))</code></pre>
+<pre><code>## [1] 10</code></pre>
+</div>
+<div id="names" class="section level3">
+<h3>3. names</h3>
+<ul>
+<li><h4>資料行名稱</h4></li>
+</ul>
+<pre class="r"><code>score &lt;- c(10,20,100)
+names(score) &lt;- c('SAS','SPSS','R')
+score</code></pre>
+<pre><code>##  SAS SPSS    R 
+##   10   20  100</code></pre>
+</div>
+<div id="sort-order" class="section level3">
+<h3>4. sort, order</h3>
+<ul>
+<li><h4 id="sort">sort：產生一組長度一樣的向量，將向量中的元素由小到大排列</h4></li>
+<li><h4 id="order">order：產生一組長度一樣的向量，回傳排序後的元素在原向量的等級</h4></li>
+</ul>
+<pre class="r"><code>sort( c(1,5,2) )</code></pre>
+<pre><code>## [1] 1 2 5</code></pre>
+<pre class="r"><code>order( c(1,5,2) )</code></pre>
+<pre><code>## [1] 1 3 2</code></pre>
+</div>
+<div id="seq-rep" class="section level3">
+<h3>5. seq, rep</h3>
+<ul>
+<li><h4 id="seq-">seq 可以想成產生一連串有規律的數字</h4>
+<h4 id="seq-seqfrom-1-to-1-..">?seq ==&gt; seq(from = 1, to = 1, …..)</h4></li>
+<li><h4 id="rep-">rep 可以想成產生一連串有重複的數字</h4>
+<h4 id="rep-repx">?rep ==&gt; rep(x, … )</h4></li>
+<li><h4 id="seqrep">常常seq跟rep會一起搭配</h4></li>
+</ul>
+<pre class="r"><code>seq(from = 1, to = 9, by = 2) ## seq(1,9,2)</code></pre>
+<pre><code>## [1] 1 3 5 7 9</code></pre>
+<pre class="r"><code>seq(from = 9, to = 1, by = -2) ## seq(9,1,-2)</code></pre>
+<pre><code>## [1] 9 7 5 3 1</code></pre>
+<pre class="r"><code>rep( seq(from = 1, to = 9, by = 2) , times= 2)</code></pre>
+<pre><code>##  [1] 1 3 5 7 9 1 3 5 7 9</code></pre>
+<pre class="r"><code>rep( seq(from = 1, to = 9, by = 2) , each= 2)</code></pre>
+<pre><code>##  [1] 1 1 3 3 5 5 7 7 9 9</code></pre>
+</div>
+<div id="function" class="section level3">
+<h3>6. 自定function</h3>
+<ul>
+<li><h4 id="function">有時候我們會需要自定一個function來完成某些事情</h4>
+<h4 id="function">這邊教大家如何寫一個自己的function</h4>
+<h4 id="function">假設我們沒有算平均數的function，我們要自己寫一個</h4></li>
 </ul>
 <pre class="r"><code>cust.mean &lt;- function(x){
   mean.result &lt;- sum(x)/length(x)
@@ -721,78 +897,36 @@ mean(1:10)</code></pre>
 <pre><code>## [1] 5.5</code></pre>
 </div>
 <div id="which" class="section level3">
-<h3>3. which</h3>
+<h3>7. which</h3>
 <ul>
-<li><h4 id="whichfunction">which是一個很常用的function</h4></li>
-<li><h4 id="whichture">which可以理解為：哪一個為TURE</h4></li>
-<li><h4 id="which">which更常拿來挑選資料</h4></li>
+<li><h4 id="whichfunction">which是一個很常用的function</h4>
+<h4 id="whichture">which可以理解為：哪一個為TURE</h4>
+<h4 id="which">which更常拿來挑選資料</h4></li>
 </ul>
 <pre class="r"><code>which(c(1:3)==3)</code></pre>
 <pre><code>## [1] 3</code></pre>
 <pre class="r"><code>which(c(F,F,T))</code></pre>
 <pre><code>## [1] 3</code></pre>
-<pre class="r"><code>#data
-#which(data$name=='連D')
-## 挑選資料列
-#row &lt;- which(data$name=='連D')
-#data[row,]</code></pre>
-</div>
-<div id="sort-order" class="section level3">
-<h3>4. sort, order</h3>
-<ul>
-<li><h4 id="sort">sort常用於當我們要排序一組向量</h4></li>
-<li><h4 id="order">order常用於當我們要按照某一個向量排序一組資料</h4></li>
-</ul>
-<pre class="r"><code>sort(c(1,5,2))</code></pre>
-<pre><code>## [1] 1 2 5</code></pre>
-<pre class="r"><code>order(c(1,5,2))</code></pre>
-<pre><code>## [1] 1 3 2</code></pre>
-<pre class="r"><code>#data[order(data$pro),]</code></pre>
-</div>
-<div id="length" class="section level3">
-<h3>5. length</h3>
-<ul>
-<li><h4 id="length">看一個向量長度時常用length</h4></li>
-</ul>
-<pre class="r"><code>length(c(1:10))</code></pre>
-<pre><code>## [1] 10</code></pre>
-</div>
-<div id="names" class="section level3">
-<h3>6. names</h3>
-<ul>
-<li><h4>資料行名稱</h4></li>
-</ul>
-<pre class="r"><code>score &lt;- c(10,20,100)
-names(score) &lt;- c('SAS','SPSS','R')
-score</code></pre>
-<pre><code>##  SAS SPSS    R 
-##   10   20  100</code></pre>
-</div>
-<div id="seq-rep" class="section level3">
-<h3>7. seq, rep</h3>
-<ul>
-<li><h4 id="seq-">seq 可以想成產生一連串有規律的數字</h4></li>
-<li><h4 id="seq-seqfrom-1-to-1-..">?seq ==&gt; seq(from = 1, to = 1, …..)</h4></li>
-<li><h4 id="rep-">rep 可以想成產生一連串有重複的數字</h4></li>
-<li><h4 id="rep-repx">?rep ==&gt; rep(x, … )</h4></li>
-<li><h4 id="seqrep">常常seq跟rep會一起搭配</h4></li>
-</ul>
-<pre class="r"><code>seq(from = 1, to = 9, by = 2) ## seq(1,9,2)</code></pre>
-<pre><code>## [1] 1 3 5 7 9</code></pre>
-<pre class="r"><code>seq(from = 9, to = 1, by = -2) ## seq(9,1,-2)</code></pre>
-<pre><code>## [1] 9 7 5 3 1</code></pre>
-<pre class="r"><code>rep( seq(from = 1, to = 9, by = 2) , times= 2)</code></pre>
-<pre><code>##  [1] 1 3 5 7 9 1 3 5 7 9</code></pre>
-<pre class="r"><code>rep( seq(from = 1, to = 9, by = 2) , each= 2)</code></pre>
-<pre><code>##  [1] 1 1 3 3 5 5 7 7 9 9</code></pre>
+<pre class="r"><code>data</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60
+## 2 安安 首席工程師  90
+## 4   00     不好說   0</code></pre>
+<pre class="r"><code>which(data$name=='閔閔')</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>## 挑選資料列
+row &lt;- which(data$name=='閔閔')
+data[row,]</code></pre>
+<pre><code>##   name        deg pro
+## 1 閔閔 人生勝利組  60</code></pre>
 </div>
 <div id="nchar-substr-paste-strsplit" class="section level3">
 <h3>8. 字串處理：nchar(長度), substr(擷取), paste(剪貼), strsplit(分割)</h3>
 <ul>
-<li><h4>字串常常是很棘手的難題</h4></li>
-<li><h4 id=".">例如：台北市文山區指南路三段….</h4></li>
-<li><h4>也許我們想保留的只有台北市文山區或是只南路三段</h4></li>
-<li><h4>這時候就會對字串做些處理</h4></li>
+<li><h4>字串常常是很棘手的難題</h4>
+<h4 id=".">例如：台北市文山區指南路三段….</h4>
+<h4>也許我們想保留的只有台北市文山區或是指南路三段</h4>
+<h4>這時候就會對字串做些處理</h4></li>
 </ul>
 <pre class="r"><code>x &lt;- c('Apple-iphone','Samsung-Note','HTC-wtf')</code></pre>
 <pre class="r"><code>## 計算字數
@@ -911,6 +1045,7 @@ Read 4 items
 <li><h3>2. 首先簡單了解一下資料長相</h3>
 <ul>
 <li><h4 id="head-">head ： 看前幾筆資料</h4></li>
+<li><h4 id="tail-">tail ： 看末幾筆資料</h4></li>
 <li><h4 id="str-">str ：看資料的結構</h4></li>
 </ul></li>
 </ul>
@@ -922,6 +1057,14 @@ Read 4 items
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>tail(iris)</code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 145          6.7         3.3          5.7         2.5 virginica
+## 146          6.7         3.0          5.2         2.3 virginica
+## 147          6.3         2.5          5.0         1.9 virginica
+## 148          6.5         3.0          5.2         2.0 virginica
+## 149          6.2         3.4          5.4         2.3 virginica
+## 150          5.9         3.0          5.1         1.8 virginica</code></pre>
 <pre class="r"><code>str(iris)</code></pre>
 <pre><code>## 'data.frame':    150 obs. of  5 variables:
 ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
@@ -954,9 +1097,6 @@ prop.table(iris.table)</code></pre>
 ##     setosa versicolor  virginica 
 ##  0.3333333  0.3333333  0.3333333</code></pre>
 </div>
-<div id="sepal.length" class="section level4">
-<h4>再來看看Sepal.Length這個變數</h4>
-</div>
 <div id="summary" class="section level4">
 <h4>summary可以讓我們物件或是變數的敘述統計量</h4>
 <pre class="r"><code>summary(iris)</code></pre>
@@ -974,12 +1114,15 @@ prop.table(iris.table)</code></pre>
 ##                 
 ##                 
 ## </code></pre>
+</div>
+<div id="sepal.length" class="section level4">
+<h4>再來看看Sepal.Length這個變數</h4>
 <pre class="r"><code>summary(iris$Sepal.Length)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   4.300   5.100   5.800   5.843   6.400   7.900</code></pre>
 </div>
 <div class="section level4">
-<h4>想要改變長度寬度的單位(加減乘除都行～)</h4>
+<h4>想要改變長度寬度的單位(加減乘除都行)</h4>
 <pre class="r"><code>iris$Sepal.Length &lt;- iris$Sepal.Length*10
 summary(iris$Sepal.Length)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -1043,7 +1186,7 @@ head(setosa)</code></pre>
 ## 4  46 3.1 1.5 0.2  setosa 14.83871
 ## 5  50 3.6 1.4 0.2  setosa 13.88889
 ## 6  54 3.9 1.7 0.4  setosa 13.84615</code></pre>
-<pre class="r"><code>setosa &lt;- subset(iris,Species=='setosa')
+<pre class="r"><code>setosa &lt;- subset(iris, Species=='setosa')
 head(setosa)</code></pre>
 <pre><code>##   S.L S.W P.L P.W Species     mary
 ## 1  51 3.5 1.4 0.2  setosa 14.57143
@@ -1063,43 +1206,49 @@ head(setosa)</code></pre>
 <h4>本課堂在此只介紹tapply</h4>
 </div>
 <div id="httpbryannotes.blogspot.tw201406r-applysapplylapply.html" class="section level4">
-<h4>其他可以參考http://bryannotes.blogspot.tw/2014/06/r-applysapplylapply.html</h4>
+<h4>其他可以參考<a href="http://bryannotes.blogspot.tw/2014/06/r-applysapplylapply.html" class="uri">http://bryannotes.blogspot.tw/2014/06/r-applysapplylapply.html</a></h4>
 </div>
 <div id="tapplyy" class="section level4">
 <h4>tapply(要計算的y,依照什麼分組,利用什麼函式)</h4>
-<pre class="r"><code>tapply(iris$S.L,iris$Species,mean)</code></pre>
+<pre class="r"><code>tapply(iris$S.L, iris$Species, mean)</code></pre>
 <pre><code>##     setosa versicolor  virginica 
 ##      50.06      59.36      65.88</code></pre>
-<pre class="r"><code>tapply(iris$S.L,iris$Species,sum)</code></pre>
+<pre class="r"><code>tapply(iris$S.L, iris$Species, sum)</code></pre>
 <pre><code>##     setosa versicolor  virginica 
 ##       2503       2968       3294</code></pre>
-<pre class="r"><code>tapply(iris$S.L,iris$Species,sd)</code></pre>
+<pre class="r"><code>tapply(iris$S.L, iris$Species, sd)</code></pre>
 <pre><code>##     setosa versicolor  virginica 
 ##   3.524897   5.161711   6.358796</code></pre>
 <hr />
 </div>
 </div>
 </div>
-<div id="chapter-7" class="section level1">
-<h1>Chapter 7</h1>
+<div id="chapter-7-data-manipulating" class="section level1">
+<h1>Chapter 7 Data manipulating：資料整形手術</h1>
 <ul>
+<li><h4>在多數的狀況中，我們所拿到的資料集都並非乾淨且美好的（有別於課堂資料）。</h4>
+<h4>隨著我們分析的目的不同，我們資料的格式也需要做轉換。</h4>
+<h4 id="r">因此熟悉基本的R資料操作能裡力後，帶大家一起來執行更進階的資料處理能力</h4>
+<h4>雖說進階，但未來接觸資料後會發現這是必備且好用的技能！</h4>
+<h4>接下來會利用目的導向的方式介紹使用方法，省去大家尋找工具的時間</h4></li>
 <li><h3 id="-1">1. 讀取資料</h3>
 <ul>
-<li><h4>讀取<a href="http://ppt.cc/enSAR">台北市實價登錄資料</a></h4></li>
-<li><h4 id="httpppt.ccensar"><a href="http://ppt.cc/enSAR" class="uri">http://ppt.cc/enSAR</a></h4></li>
+<li><h4>首先讀取<a href="https://goo.gl/Nu5JSz">台北市實價登錄資料</a></h4></li>
+<li><h4 id="httpsgoo.glnu5jsz"><a href="https://goo.gl/Nu5JSz" class="uri">https://goo.gl/Nu5JSz</a></h4></li>
 </ul></li>
 </ul>
-<pre class="r"><code>data &lt;- read.csv('/Users/hsiaoling/Desktop/real.price.csv',fileEncoding = 'big5')</code></pre>
+<pre class="r"><code>data &lt;- read.csv('/Users/hsiaoling/Desktop/Code/Program/Workshop/real.price.csv',fileEncoding = 'big5')</code></pre>
 <ul>
 <li><h3>2. 看資料長相</h3></li>
 </ul>
 <pre class="r"><code>head(data)
+tail(data)
 str(data)
 # View(data)</code></pre>
 <ul>
 <li><h3 id="-dplyr">3. 實用工具 dplyr</h3>
 <ul>
-<li><h4 id="dplyrtidyr">dplyr以及tidyr是資料的整理、資料彙整的好幫手</h4></li>
+<li><h4 id="dplyr">dplyr是資料的整理、資料彙整的好幫手</h4></li>
 <li><h4>可以幫你省去許多時間，只要你對他夠熟悉！</h4></li>
 <li><h4>接下來跟各位介紹一些基本的函式</h4></li>
 </ul></li>
@@ -1116,85 +1265,19 @@ library(dplyr)</code></pre>
 </ul></li>
 </ul>
 <pre class="r"><code># 挑選資料欄位
-temp &lt;- select(data,鄉鎮市區,交易標的)
-head(temp)</code></pre>
-<pre><code>##   鄉鎮市區             交易標的
-## 1   文山區 房地(土地+建物)+車位
-## 2   中正區      房地(土地+建物)
-## 3   大同區      房地(土地+建物)
-## 4   萬華區      房地(土地+建物)
-## 5   中正區      房地(土地+建物)
-## 6   大同區                 土地</code></pre>
-<pre class="r"><code># 剔除資料欄位
-temp &lt;- select(data,-鄉鎮市區)
-head(temp)</code></pre>
-<pre><code>##               交易標的        土地區段位置或建物區門牌
-## 1 房地(土地+建物)+車位    臺北市文山區樟新街56巷1~30號
-## 2      房地(土地+建物) 臺北市中正區羅斯福路一段31~60號
-## 3      房地(土地+建物)   臺北市大同區民權西路271~300號
-## 4      房地(土地+建物) 臺北市萬華區西園路一段151~180號
-## 5      房地(土地+建物)      臺北市中正區博愛路91~120號
-## 6                 土地         圓環段二小段361~390地號
-##   土地移轉總面積平方公尺 都市土地使用分區 非都市土地使用分區
-## 1                  48.18               住                 NA
-## 2                   7.54               商                 NA
-## 3                   7.77               住                 NA
-## 4                   2.98               商                 NA
-## 5                  151.0               商                 NA
-## 6                  105.0               住                 NA
-##   非都市土地使用編定 交易年月      交易筆棟數 移轉層次 總樓層數
-## 1                 NA    10402 土地1建物1車位1     三層        9
-## 2                 NA    10403 土地2建物1車位0     三層       12
-## 3                 NA    10403 土地1建物1車位0     三層       11
-## 4                 NA    10403 土地3建物1車位0     六層       12
-## 5                 NA    10312 土地2建物1車位0       全        3
-## 6                 NA    10403 土地3建物0車位0                NA
-##                     建物型態       主要用途       主要建材 建築完成年月
-## 1     華廈(10層含以下有電梯)         住家用   鋼筋混凝土造       800425
-## 2 住宅大樓(11層含以上有電梯)         商業用   鋼筋混凝土造       860113
-## 3            套房(1房1廳1衛) 見其他登記事項   鋼筋混凝土造       931029
-## 4            套房(1房1廳1衛)         商業用   鋼筋混凝土造       780503
-## 5                     透天厝         商業用 見其他登記事項           NA
-## 6                       其他                                         NA
-##   建物移轉總面積平方公尺 建物現況格局.房 建物現況格局.廳 建物現況格局.衛
-## 1                 221.17               5               2               2
-## 2                  56.50               3               1               1
-## 3                  44.56               1               1               1
-## 4                  34.37               0               1               1
-## 5                 346.65               0               0               0
-## 6                   0.00               0               0               0
-##   建物現況格局.隔間 有無管理組織    總價元 單價每平方公尺 車位類別
-## 1                有           無  24000000         108514 升降平面
-## 2                有           有  17000000         300885         
-## 3                有           無   5400000         121185         
-## 4                有           有   5300000         154204         
-## 5                無           無 215600000         621953         
-## 6                有           無  38600000         367619         
-##   車位移轉總面積平方公尺 車位總價元
-## 1                      0          0
-## 2                      0          0
-## 3                      0          0
-## 4                      0          0
-## 5                      0          0
-## 6                      0          0
-##                                                                       備註
-## 1 內含獨立產權車位，未包含在棟數。內含增建或未登記建物。車位面積無法概算。
-## 2                                                                         
-## 3                                                                         
-## 4                                                                         
-## 5                                                                         
-## 6                                                                         
-##                  編號
-## 1 RPQNMLSJMHKFFAA47CA
-## 2 RPSOMLQKMHKFFAA67CA
-## 3 RPVOMLLJMHKFFBA47CA
-## 4 RPWOMLLJMHKFFBA57CA
-## 5 RPRNMLRJMHKFFBA57CA
-## 6 RPPNMLKKMHKFFBA76CA</code></pre>
-<pre class="r"><code># 挑我們練習的欄位
-data.new &lt;- select(data,-c(非都市土地使用分區,非都市土地使用編定,交易筆棟數,
-                           移轉層次,建物現況格局.房:建物現況格局.隔間,
-                           車位類別,備註,編號))</code></pre>
+temp &lt;- select(data, 鄉鎮市區, 交易標的)
+head(temp)
+
+# 剔除資料欄位
+temp &lt;- select(data, -鄉鎮市區)
+head(temp)
+
+# 挑我們練習的欄位
+data.new &lt;- select(data,-c(非都市土地使用分區, 非都市土地使用編定, 交易筆棟數,
+                           移轉層次, 建物現況格局.房:建物現況格局.隔間,
+                           車位類別, 備註, 編號))
+  # or
+# data.new &lt;- select(data,-c(6,7,9,10,17:20,24,27,28))</code></pre>
 <ul>
 <li><h3 id="b.-filter">b. filter</h3>
 <ul>
@@ -1202,43 +1285,8 @@ data.new &lt;- select(data,-c(非都市土地使用分區,非都市土地使用�
 <h4 id="ex-">Ex : 我們想要看文山區的房屋交易</h4></li>
 </ul></li>
 </ul>
-<pre class="r"><code>data.wenshan &lt;- filter(data.new,鄉鎮市區=='文山區')
+<pre class="r"><code>data.wenshan &lt;- filter(data.new, 鄉鎮市區=='文山區')
 head(data.wenshan)</code></pre>
-<pre><code>##   鄉鎮市區             交易標的             土地區段位置或建物區門牌
-## 1   文山區 房地(土地+建物)+車位         臺北市文山區樟新街56巷1~30號
-## 2   文山區      房地(土地+建物)    臺北市文山區興隆路二段226巷1~30號
-## 3   文山區      房地(土地+建物) 臺北市文山區興隆路三段255巷6弄1~30號
-## 4   文山區      房地(土地+建物)    臺北市文山區木柵路一段191巷1~30號
-## 5   文山區                 車位     臺北市文山區木新路三段95巷1~30號
-## 6   文山區                 車位     臺北市文山區木新路三段95巷1~30號
-##   土地移轉總面積平方公尺 都市土地使用分區 交易年月 總樓層數
-## 1                  48.18               住    10402        9
-## 2                  30.72               商    10403        9
-## 3                  29.43               住    10403        4
-## 4                  39.84               住    10403        3
-## 5                   0.42               住    10403       13
-## 6                   0.42               住    10403       13
-##                 建物型態 主要用途     主要建材 建築完成年月
-## 1 華廈(10層含以下有電梯)   住家用 鋼筋混凝土造       800425
-## 2 華廈(10層含以下有電梯)   商業用 鋼筋混凝土造       751024
-## 3  公寓(5樓含以下無電梯)   住家用 鋼筋混凝土造       750327
-## 4  公寓(5樓含以下無電梯)   住家用 鋼筋混凝土造           NA
-## 5                   其他 停車空間 鋼筋混凝土造       990324
-## 6                   其他 停車空間 鋼筋混凝土造       990324
-##   建物移轉總面積平方公尺 有無管理組織   總價元 單價每平方公尺
-## 1                 221.17           無 24000000         108514
-## 2                 130.38           有 20980000         160927
-## 3                 100.56           無  9650000          95963
-## 4                  86.19           無  8700000         100940
-## 5                  37.28           有  2050000             NA
-## 6                  43.21           有  2180000             NA
-##   車位移轉總面積平方公尺 車位總價元
-## 1                   0.00          0
-## 2                   0.00          0
-## 3                   0.00          0
-## 4                   0.00          0
-## 5                  37.28    2050000
-## 6                  43.21    2180000</code></pre>
 <ul>
 <li><h3 id="c.-mutate">c. mutate</h3>
 <ul>
@@ -1246,20 +1294,14 @@ head(data.wenshan)</code></pre>
 <h4 id="ex1----1-0.3025-">Ex1 : 建物（以及土地）移轉總面積平方公尺 轉換成 建物（土地）坪數 (1平方公尺 = 0.3025 坪)</h4></li>
 </ul></li>
 </ul>
-<pre class="r"><code># 因為土地面積讀近來時是因子，因此我們需要轉換成數值
-# Tip: 因子要轉數值 需要先經過字串才不會出錯
-class(data.new$土地移轉總面積平方公尺)</code></pre>
-<pre><code>## [1] &quot;factor&quot;</code></pre>
 <pre class="r"><code>data.new &lt;- mutate(data.new,建物坪數=建物移轉總面積平方公尺*0.3025,
-                            土地坪數=
-                     as.numeric(as.character(土地移轉總面積平方公尺))*0.3025)</code></pre>
-<pre><code>## Warning in eval(substitute(expr), envir, enclos): 強制變更過程中產生了 NA</code></pre>
+                            土地坪數=土地移轉總面積平方公尺*0.3025)</code></pre>
 <div id="ex2-" class="section level4">
-<h4>Ex2 : 坪價：總價元/建物坪數</h4>
+<h4>Ex2 : 簡單計算坪價：總價元/建物坪數</h4>
 <pre class="r"><code>## 注意建物坪數=0 算出來會是Inf
 ## mutate(data.new,坪價=總價元/建物坪數)
 ## 避開建物坪數=0
-data.new &lt;- mutate(data.new,坪價=ifelse(建物坪數==0,0,總價元/建物坪數))</code></pre>
+data.new &lt;- mutate(data.new, 坪價=ifelse(建物坪數==0, 0, 總價元/建物坪數))</code></pre>
 <ul>
 <li><h3 id="d.-arrange">d. arrange</h3>
 <ul>
@@ -1268,15 +1310,15 @@ data.new &lt;- mutate(data.new,坪價=ifelse(建物坪數==0,0,總價元/建物�
 </ul></li>
 </ul>
 </div>
-<div class="section level4">
-<h4>想按照坪價排序，由低到高、由高到低</h4>
-<pre class="r"><code>arrange(data.new,坪價)
+<div id="ex-" class="section level4">
+<h4>Ex : 想按照坪價排序，由低到高、由高到低</h4>
+<pre class="r"><code>arrange(data.new,坪價) 
 arrange(data.new,desc(坪價))</code></pre>
 <ul>
 <li><h3 id="e.-summarise">e. summarise</h3>
 <ul>
 <li><h4>做資料彙總的函式，可以擺放不同的彙總方式。</h4></li>
-<li><h4 id="ex-">Ex : 計算比數、計算平均、最大值…</h4></li>
+<li><h4 id="ex-">Ex : 計算筆數、計算平均、最大值…</h4></li>
 <li><h4 id="group_by">通常配合group_by</h4></li>
 </ul></li>
 </ul>
@@ -1299,15 +1341,18 @@ summarise(data.new,
 <ul>
 <li><h4 id="group_by">group_by可以想像成把指定的欄位中值相同的資料偷偷綁在一塊(從資料上看不出改變)</h4></li>
 <li><h4 id="group_bydata.new-">group_by(data.new,鄉鎮市區) ==&gt; 把文山區的資料綁一起、松山區的資料綁一起…</h4></li>
-<li><h4 id="dplyr-ex-filter-mutate-summarise-.">通常一定會配合其他dplyr的函式, Ex: filter, mutate, summarise ….</h4>
-<h4 id="ex-">Ex : 想要知道台北市各行政區的平均坪價、坪價中位數、最貴、最便宜</h4></li>
+<li><h4 id="dplyr-ex-filter-mutate-summarise-.">通常一定會配合其他dplyr的函式, Ex: filter, mutate, summarise ….</h4></li>
 </ul></li>
 </ul>
+</div>
+<div id="ex-" class="section level4">
+<h4>Ex : 想要知道台北市各行政區的平均坪價、坪價中位數、最貴、最便宜</h4>
 <pre class="r"><code>result &lt;- summarise(group_by(data.new,鄉鎮市區),
                     平均坪價 = mean(坪價,na.rm = T),
                     坪價中位數 = median(坪價,na.rm = T),
                     最貴 = max(坪價,na.rm = T),
                     最便宜 = min(坪價,na.rm = T))
+
 ## 發現鄉鎮市區欄位中有很多的異常值，要把它去除
 ## 動動腦思考看看要怎麼去除
 result$鄉鎮市區 &lt;- as.character(result$鄉鎮市區)
@@ -1315,17 +1360,14 @@ result &lt;- filter(result,nchar(result$鄉鎮市區)==3)</code></pre>
 </div>
 <div id="ex-" class="section level4">
 <h4>Ex : 想要知道台北市各行政區的房屋交易筆數</h4>
-<pre class="r"><code>## 先把鄉鎮市區異常值剔除掉
-data.new &lt;- filter(data.new,
-                   nchar(as.character(data.new$鄉鎮市區))==3)
-## 計算筆數有蠻多種方式： n(), length(), tally
+<pre class="r"><code>## 計算筆數有蠻多種方式： n(), length(), tally
 summarise(group_by(data.new,鄉鎮市區),
           交易筆數a=n(),
-          交易比數b=length(建物坪數),
-          交易比數c=length(坪價))</code></pre>
+          交易筆數b=length(建物坪數),
+          交易筆數c=length(坪價))</code></pre>
 <pre><code>## Source: local data frame [12 x 4]
 ## 
-##    鄉鎮市區 交易筆數a 交易比數b 交易比數c
+##    鄉鎮市區 交易筆數a 交易筆數b 交易筆數c
 ##      (fctr)     (int)     (int)     (int)
 ## 1    北投區        74        74        74
 ## 2    大安區        50        50        50
