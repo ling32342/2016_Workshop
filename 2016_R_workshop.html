@@ -690,7 +690,7 @@ data</code></pre>
 ## 1 閔閔 人生勝利組  60
 ## 2 安安 首席工程師  90
 ## 3 筠筠       團花  85</code></pre>
-<pre class="r"><code>data$win &lt;- c(F,T,T) ## Or 前面教過的另一種 data[,4] &lt;- c(T,F)
+<pre class="r"><code>data$win &lt;- c(F,T,T) ## Or 前面教過的另一種 data[,4] &lt;- c(F,T,T)
 data</code></pre>
 <pre><code>##   name        deg pro   win
 ## 1 閔閔 人生勝利組  60 FALSE
@@ -718,8 +718,8 @@ data</code></pre>
 ## 2 安安 首席工程師  90
 ## 4   00     不好說   0</code></pre>
 </div>
-<div id="c.-cbindrbind" class="section level4">
-<h4>        c. cbind、rbind</h4>
+<div id="c.-" class="section level4">
+<h4>        c. 挑選列、挑選變數</h4>
 <pre class="r"><code>## 我們要的並非只是回傳T or F，而是要整個資料阿！！！！
 data$pro &gt; 50</code></pre>
 <pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
@@ -729,11 +729,29 @@ data[ data$pro &gt; 50, ]</code></pre>
 ## 1 閔閔 人生勝利組  60
 ## 2 安安 首席工程師  90</code></pre>
 <pre class="r"><code>## 挑選變數的部分跟之前一樣！
-data$pro</code></pre>
+data$pro  ## or data[,3]</code></pre>
 <pre><code>## [1] &quot;60&quot; &quot;90&quot; &quot;0&quot;</code></pre>
-<pre class="r"><code>data[,3]</code></pre>
-<pre><code>## [1] &quot;60&quot; &quot;90&quot; &quot;0&quot;</code></pre>
+</div>
+<div id="d.-cbindrbind" class="section level4">
+<h4>        d. cbind、rbind</h4>
+<div id="rbind-" class="section level5">
+<h5>              rbind()：上下合併 (列合併)</h5>
+</div>
+<div id="cbind-" class="section level5">
+<h5>              cbind()：左右合併 (行合併)</h5>
+<pre class="r"><code># 將向量c(1, 2, 3)與向量c(4, 5, 6)上下合併
+rbind(c(1, 2, 3), c(4, 5, 6))</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<pre class="r"><code># 將向量c(1, 2, 3)與向量c(4, 5, 6)左右合併
+cbind(c(1, 2, 3), c(4, 5, 6))</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
 <hr />
+</div>
 </div>
 </div>
 </div>
@@ -1239,8 +1257,8 @@ head(setosa)</code></pre>
 </div>
 </div>
 </div>
-<div id="chapter-7-data-manipulating" class="section level1">
-<h1>Chapter 7 Data manipulating：資料整形手術</h1>
+<div id="chapter-7---data-manipulating" class="section level1">
+<h1>Chapter 7 - Data manipulating：資料整形手術</h1>
 <ul>
 <li><h4>在多數的狀況中，我們所拿到的資料集都並非乾淨且美好的（有別於課堂資料）。</h4>
 <h4>隨著我們分析的目的不同，我們資料的格式也需要做轉換。</h4>
