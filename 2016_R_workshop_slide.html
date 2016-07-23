@@ -1588,6 +1588,59 @@ apply家族：apply, tapply, lapply, sapply …
 <pre >    setosa versicolor  virginica 
   3.524897   5.161711   6.358796 </pre>
 
+</article></slide><slide class=''><hgroup><h2>Practice Time!!</h2></hgroup><article  id="practice-time">
+
+<h4><strong>1. 先製造一向量為1, NA, 3, NA, 5, NA, 7, NA, 9, NA</strong></h4>
+
+<p>
+
+<h4><strong>2. 請嘗試填補遺失值，使得向量變為1, 2, 3, 4, 5, 6, 7, 8, 9, 10</strong></h4>
+
+<p>
+
+<h4><strong>Hint：利用is.na()與which()</strong></h4>
+
+</article></slide><slide class=''><hgroup><h2>Answer</h2></hgroup><article  id="answer">
+
+<strong>1. 先製造一向量為1, NA, 3, NA, 5, NA, 7, NA, 9, NA</strong>
+
+<p>
+
+<strong>2. 請嘗試填補遺失值，使得向量變為1, 2, 3, 4, 5, 6, 7, 8, 9, 10</strong>
+
+<p>
+
+<pre class = 'prettyprint lang-r'>&gt; v_practice &lt;- c(1, NA, 3, NA, 5, NA, 7, NA, 9, NA)
+&gt; v_practice[which(is.na(v_practice))] &lt;- c(2,4,6,8,10)
+&gt; v_practice</pre>
+
+<pre > [1]  1  2  3  4  5  6  7  8  9 10</pre>
+
+<pre class = 'prettyprint lang-r'>&gt; v_practice[which(is.na(v_practice))] &lt;- seq(2, 10, by = 2)
+&gt; v_practice</pre>
+
+<pre > [1]  1  2  3  4  5  6  7  8  9 10</pre>
+
+</article></slide><slide class=''><hgroup><h2>Pratice Time!!</h2></hgroup><article  id="pratice-time">
+
+<h3><strong>請取出 iris 中</strong></br></h3>
+
+<h3><strong>Species 為 versicolor 的資料</strong></br></h3>
+
+<h3><strong>且欄位只包含 Sepal.Length、Petal.Length、Species</strong></h3>
+
+</article></slide><slide class=''><hgroup><h2>Answer</h2></hgroup><article  id="answer-1">
+
+<h3><strong>請取出 iris 中</strong></br></h3>
+
+<h3><strong>Species 為 versicolor 的資料</strong></br></h3>
+
+<h3><strong>且欄位只包含 Sepal.Length、Petal.Length、Species</strong></h3>
+
+<p>
+
+<pre class = 'prettyprint lang-r'>&gt; iris[iris$Species == &quot;versicolor&quot;, c(&quot;Sepal.Length&quot;, &quot;Petal.Length&quot;, &quot;Species&quot;)]</pre>
+
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Chapter 7 - Data manipulating</h2></hgroup><article  id="chapter-7---data-manipulating-1">
 
 </article></slide><slide class=''><hgroup><h2>Data manipulating：資料整形手術</h2></hgroup><article  id="data-manipulating">
@@ -1819,6 +1872,44 @@ apply家族：apply, tapply, lapply, sapply …
 10   信義區    44
 11   中山區    72
 12   中正區    24</pre>
+
+</article></slide><slide class=''><hgroup><h2>Practice Time!!</h2></hgroup><article  id="practice-time-1">
+
+<h4><strong>1. 新增一個屋齡欄位</strong></h4>
+
+<p>
+
+<h4><strong>Hint：利用<strong>建築完成年月</strong>欄位</strong></h4>
+
+</article></slide><slide class=''><hgroup><h2>Answer</h2></hgroup><article  id="answer-2">
+
+<h3><strong>1. 先對交易年月做處理：/10000得到整數為年份,小數為月份及日期</strong></br></h3>
+
+<h3><strong>2. 利用今年105年對他做相減得到屋齡</strong></h3>
+
+<p>
+
+<pre class = 'prettyprint lang-r'>&gt; data &lt;- mutate(data, 屋齡=105-floor(建築完成年月/10000))</pre>
+
+<pre class = 'prettyprint lang-r'>&gt; head(select(data,建築完成年月,屋齡))</pre>
+
+<pre >  建築完成年月 屋齡
+1       800425   25
+2       860113   19
+3       931029   12
+4       780503   27
+5           NA   NA
+6           NA   NA</pre>
+
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article >
+
+<pre class = 'prettyprint lang-r'>&gt; summarise(data,
++           平均屋齡 = mean(屋齡,na.rm = T),
++           屋齡中位數 = median(屋齡,na.rm = T),
++           最老屋齡 = max(屋齡,na.rm = T))</pre>
+
+<pre >  平均屋齡 屋齡中位數 最老屋齡
+1  21.3595         21       53</pre>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Thank you. ^.&lt;</h2></hgroup><article  id="thank-you.-."></article></slide>
 
